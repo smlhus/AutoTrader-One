@@ -1,0 +1,20 @@
+{
+  "recommendations_total": [
+    {
+      "timestamp": 1742746043.4966445,
+      "value": 2
+    }
+  ],
+  "recommendations_valid": [
+    {
+      "timestamp": 1742746043.4966445,
+      "value": 2
+    }
+  ],
+  "risk_score_avg": [
+    {
+      "timestamp": 1742746043.4966445,
+      "value": 35.0
+    }
+  ]
+}

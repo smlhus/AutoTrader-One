@@ -1,0 +1,143 @@
+# AutoTrader One konfigurasjon
+
+# Dataprovidere
+market_data:
+  provider: alpha_vantage
+  api_key: "DIN_ALPHA_VANTAGE_API_NØKKEL"
+  cache_timeout: 300  # 5 minutter
+
+fundamental_data:
+  provider: fmp
+  api_key: "DIN_FMP_API_NØKKEL"
+  cache_timeout: 3600  # 1 time
+
+news_data:
+  provider: newsapi
+  api_key: "DIN_NEWSAPI_API_NØKKEL"
+  cache_timeout: 1800  # 30 minutter
+
+# Symboler å analysere
+symbols:
+  - "EQNR.OL"
+  - "DNB.OL"
+  - "TEL.OL"
+  - "AKRBP.OL"
+
+# Analyseinnstillinger
+analysis:
+  weights:
+    technical: 0.4
+    fundamental: 0.4
+    sentiment: 0.2
+  
+  technical:
+    indicators:
+      - rsi
+      - sma
+      - macd
+    periods:
+      short: 14
+      medium: 50
+      long: 200
+  
+  fundamental:
+    metrics:
+      - pe_ratio
+      - pb_ratio
+      - dividend_yield
+      - debt_to_equity
+    min_dividend_yield: 0.02
+    max_debt_to_equity: 2.0
+  
+  sentiment:
+    min_confidence: 0.6
+    max_age_days: 7
+
+# Anbefalinger
+recommendations:
+  thresholds:
+    buy: 70.0
+    sell: 30.0
+    max_risk: 0.7
+
+# Risikostyring
+risk_management:
+  max_position_size: 0.1  # Maksimal posisjonsstørrelse som andel av porteføljen
+  max_drawdown: 0.15     # Maksimal tillatt drawdown
+  stop_loss: 0.05        # Stop-loss prosent
+  take_profit: 0.15      # Take-profit prosent
+  max_leverage: 1.0      # Maksimal tillatt giring
+
+# Rapportering
+reporting:
+  output_dir: "reports"
+  save_raw_data: true
+  include_charts: true
+  format: "markdown"
+  language: "nb"  # Norsk bokmål
+
+# API-innstillinger
+api_keys:
+  alpha_vantage: "din_api_nøkkel_her"
+  fmp: "din_api_nøkkel_her"
+  newsapi: "din_api_nøkkel_her"
+
+# Symboler for analyse
+symbols:
+  - "EQNR.OL"
+  - "DNB.OL"
+  - "TEL.OL"
+  - "AKRBP.OL"
+
+# Analyseinnstillinger
+analysis:
+  technical:
+    weight: 0.4
+    indicators:
+      - "RSI"
+      - "MACD"
+      - "SMA"
+      - "EMA"
+  fundamental:
+    weight: 0.4
+    metrics:
+      - "P/E"
+      - "P/B"
+      - "ROE"
+      - "Dividend Yield"
+  sentiment:
+    weight: 0.2
+    sources:
+      - "news"
+      - "social_media"
+
+# Anbefalingsgrenser
+recommendations:
+  buy_threshold: 0.7
+  sell_threshold: 0.3
+
+# Risikostyring
+risk_management:
+  max_position_size: 0.1  # 10% av portefølje
+  stop_loss: 0.05        # 5% tap
+  take_profit: 0.15      # 15% gevinst
+  max_drawdown: 0.20     # 20% maksimalt tap
+
+# Rapportinnstillinger
+reporting:
+  output_dir: "reports"
+  save_data: true
+  report_format: "markdown"
+  language: "nb_NO"  # Norsk bokmål
+
+# GUI-innstillinger
+gui:
+  theme: "dark"
+  colors:
+    background: "#1E2A3B"
+    text: "#FFFFFF"
+    accent_positive: "#4CAF50"
+    accent_negative: "#F44336"
+    accent_neutral: "#FFC107"
+  update_interval: 300  # Sekunder mellom hver oppdatering
+

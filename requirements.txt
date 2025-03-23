@@ -1,0 +1,32 @@
+# Dataprovidere
+alpha_vantage==2.3.1
+financialmodelingprep==0.0.2
+newsapi-python==0.2.7
+
+# Dataanalyse
+pandas==2.1.4
+numpy==1.26.2
+scikit-learn==1.3.2
+ta==0.11.0  # Teknisk analyse
+
+# Sentiment-analyse
+textblob==0.17.1
+nltk==3.8.1
+
+# API og nettverksverktøy
+requests==2.31.0
+aiohttp==3.9.1
+python-dotenv==1.0.0
+
+# Konfigurasjon og logging
+pyyaml==6.0.1
+python-dateutil==2.8.2
+
+# GUI
+customtkinter==5.2.2
+matplotlib==3.8.2
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0 
